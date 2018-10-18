@@ -1,0 +1,1 @@
+../../../Blindside/Headers/Public/BSScope.h
