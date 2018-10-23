@@ -178,6 +178,13 @@
 			path = module;
 			sourceTree = "<group>";
 		};
+		C740F62E21786D6300B422EC /* UILib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UILib;
+			sourceTree = "<group>";
+		};
 		C7C35FF6217716C7005D2610 = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +210,7 @@
 		C7C36001217716C7005D2610 /* ObjectHub */ = {
 			isa = PBXGroup;
 			children = (
+				C740F62E21786D6300B422EC /* UILib */,
 				C738ED1C21784C0A005F142D /* module */,
 				C738ED1121782BCB005F142D /* articles */,
 				C738ED1021782BB1005F142D /* profile */,

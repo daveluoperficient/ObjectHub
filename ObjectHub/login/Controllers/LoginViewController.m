@@ -7,8 +7,13 @@
 //
 
 #import "LoginViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface LoginViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *textFieldPhoneNumber;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldPassword;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 @end
 
@@ -16,8 +21,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.view.backgroundColor = [UIColor blackColor];
+    
+    [self setUpLayout];
 }
 
+- (void)setUpLayout {
+    _textFieldPhoneNumber.layer.cornerRadius = 20;
+    _textFieldPhoneNumber.layer.masksToBounds = YES;
+    _textFieldPhoneNumber.alpha = 0.8;
+    [_textFieldPhoneNumber setKeyboardType:UIKeyboardTypeNumberPad];
+    [_textFieldPhoneNumber setValue:[NSNumber numberWithInt:20] forKey:@"paddingLeft"];
+    
+    _textFieldPassword.layer.cornerRadius = 20;
+    _textFieldPassword.layer.masksToBounds = YES;
+    _textFieldPassword.alpha = 0.8;
+    [_textFieldPassword setValue:[NSNumber numberWithInt:20] forKey:@"paddingLeft"];
+    
+    _loginButton.layer.cornerRadius = 25;
+}
 
 @end
