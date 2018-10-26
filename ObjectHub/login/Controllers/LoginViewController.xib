@@ -53,21 +53,60 @@
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWr-ES-bW3" userLabel="QQlogin">
+                    <rect key="frame" x="57.5" y="600" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="4h7-0c-1Ep"/>
+                        <constraint firstAttribute="height" constant="40" id="Xy3-6S-VhC"/>
+                    </constraints>
+                    <state key="normal" image="QQ-logo"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCN-qj-MQj" userLabel="Wechatlogin">
+                    <rect key="frame" x="167.5" y="600" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="6OD-25-h6t"/>
+                        <constraint firstAttribute="width" constant="40" id="QlC-O3-YLW"/>
+                    </constraints>
+                    <state key="normal" image="wechat-logo"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p53-1Q-wqY" userLabel="Weibologin">
+                    <rect key="frame" x="277.5" y="600" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="I9R-Ug-JSO"/>
+                        <constraint firstAttribute="height" constant="40" id="NU7-0t-SCK"/>
+                    </constraints>
+                    <state key="normal" image="weibo-logo"/>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_logo" translatesAutoresizingMaskIntoConstraints="NO" id="oBC-yL-S2t">
+                    <rect key="frame" x="147.5" y="140" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="fGi-yj-mqL"/>
+                        <constraint firstAttribute="height" constant="80" id="zGC-7t-GuT"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Nay-fd-ZLR" firstAttribute="width" secondItem="HuQ-se-K0a" secondAttribute="width" id="3Ad-jD-uBV"/>
+                <constraint firstItem="p53-1Q-wqY" firstAttribute="bottom" secondItem="NCN-qj-MQj" secondAttribute="bottom" id="A8U-11-hId"/>
                 <constraint firstItem="ZiL-zo-aKM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="Ep6-Fw-3I7"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="SjT-3e-C3y" secondAttribute="trailing" id="Icy-ZX-7GP"/>
                 <constraint firstItem="SjT-3e-C3y" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="RCv-v8-8Ar"/>
                 <constraint firstItem="HuQ-se-K0a" firstAttribute="leading" secondItem="ZiL-zo-aKM" secondAttribute="leading" id="TdF-qT-LPq"/>
                 <constraint firstItem="Nay-fd-ZLR" firstAttribute="top" secondItem="HuQ-se-K0a" secondAttribute="bottom" constant="50" id="UkL-Uq-2ss"/>
                 <constraint firstItem="ZiL-zo-aKM" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="250" id="awU-XU-lDf"/>
+                <constraint firstItem="NCN-qj-MQj" firstAttribute="leading" secondItem="cWr-ES-bW3" secondAttribute="trailing" constant="70" id="eSV-SA-7tW"/>
+                <constraint firstItem="NCN-qj-MQj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gU5-CE-H6Z"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ZiL-zo-aKM" secondAttribute="trailing" constant="50" id="ieJ-3h-XPe"/>
+                <constraint firstItem="oBC-yL-S2t" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="is9-y0-1A5"/>
                 <constraint firstItem="HuQ-se-K0a" firstAttribute="top" secondItem="ZiL-zo-aKM" secondAttribute="bottom" constant="50" id="joW-kz-RkD"/>
                 <constraint firstItem="HuQ-se-K0a" firstAttribute="width" secondItem="ZiL-zo-aKM" secondAttribute="width" id="kmz-RJ-UYX"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="SjT-3e-C3y" secondAttribute="bottom" id="nTv-2j-H48"/>
                 <constraint firstItem="Nay-fd-ZLR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qsi-ji-BXD"/>
+                <constraint firstItem="oBC-yL-S2t" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="120" id="rQg-CH-p6y"/>
+                <constraint firstItem="cWr-ES-bW3" firstAttribute="top" secondItem="NCN-qj-MQj" secondAttribute="bottom" constant="-40" id="uds-58-8Lj"/>
+                <constraint firstItem="p53-1Q-wqY" firstAttribute="leading" secondItem="NCN-qj-MQj" secondAttribute="trailing" constant="70" id="vJU-s7-bYd"/>
+                <constraint firstItem="NCN-qj-MQj" firstAttribute="top" secondItem="Nay-fd-ZLR" secondAttribute="bottom" constant="50" id="zF7-UF-IUi"/>
                 <constraint firstItem="SjT-3e-C3y" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="zIZ-PA-fCn"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -75,6 +114,10 @@
         </view>
     </objects>
     <resources>
+        <image name="QQ-logo" width="112" height="110"/>
+        <image name="app_logo" width="46" height="45"/>
         <image name="login_background" width="500" height="889"/>
+        <image name="wechat-logo" width="112" height="110"/>
+        <image name="weibo-logo" width="112" height="110"/>
     </resources>
 </document>
