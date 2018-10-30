@@ -31,6 +31,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="cZn-3m-HTq"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
                     <state key="normal" title="登录">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -41,7 +42,7 @@
                         <constraint firstAttribute="height" constant="60" id="1kg-TN-Y6J"/>
                     </constraints>
                     <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HuQ-se-K0a" userLabel="password">
@@ -50,7 +51,7 @@
                         <constraint firstAttribute="height" constant="60" id="t60-DB-bfI"/>
                     </constraints>
                     <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWr-ES-bW3" userLabel="QQlogin">
@@ -115,7 +116,7 @@
     </objects>
     <resources>
         <image name="QQ-logo" width="112" height="110"/>
-        <image name="app_logo" width="46" height="45"/>
+        <image name="app_logo" width="514" height="514"/>
         <image name="login_background" width="500" height="889"/>
         <image name="wechat-logo" width="112" height="110"/>
         <image name="weibo-logo" width="112" height="110"/>
