@@ -17,8 +17,8 @@
 
 @implementation LoginViewControllerProvider
 
-- (LoginViewController *)provideController {
-    return [self.injector getInstance:[LoginViewController class]];
+- (LoginViewController *)provideControllerWithNavigationController:(UINavigationController *)navigationController {
+    return [self.injector getInstance:[LoginViewController class] withArgs:navigationController, nil];
 }
 
 @end

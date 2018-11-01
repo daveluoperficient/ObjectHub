@@ -25,14 +25,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [self setupDependencies];
+    UINavigationController *navigationController = [[UINavigationController alloc]init];
+    navigationController.navigationBarHidden = YES;
+    LoginViewController *loginViewController = [self.loginViewControllerProvider provideControllerWithNavigationController:navigationController];
     
-    LoginViewController *loginViewController = [self.loginViewControllerProvider provideController];
+    [navigationController addChildViewController:loginViewController];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
     self.window.backgroundColor = [UIColor whiteColor];
     
-    [self.window setRootViewController:loginViewController];
+    [self.window setRootViewController:navigationController];
     [self.window makeKeyAndVisible];
     
     return YES;
