@@ -14,6 +14,9 @@
 		C738ED1B21782CDD005F142D /* LoginViewControllerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C738ED1A21782CDD005F142D /* LoginViewControllerProvider.m */; };
 		C738ED1F21784C41005F142D /* InjectorProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C738ED1E21784C41005F142D /* InjectorProvider.m */; };
 		C738ED2221784D4C005F142D /* BlindsideModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C738ED2121784D4C005F142D /* BlindsideModule.m */; };
+		C76AF5FD218A98AD004FB434 /* OHTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C76AF5FC218A98AD004FB434 /* OHTabBarViewController.m */; };
+		C76AF602218A9F8E004FB434 /* OHTabBarViewControllerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C76AF601218A9F8E004FB434 /* OHTabBarViewControllerProvider.m */; };
+		C783E149218AE3A400158A41 /* OHTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C783E148218AE3A400158A41 /* OHTabBarViewController.xib */; };
 		C7C36004217716C7005D2610 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C36003217716C7005D2610 /* AppDelegate.m */; };
 		C7C3600F217716C9005D2610 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7C3600E217716C9005D2610 /* Assets.xcassets */; };
 		C7C36012217716C9005D2610 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7C36010217716C9005D2610 /* LaunchScreen.storyboard */; };
@@ -57,6 +60,11 @@
 		C738ED1E21784C41005F142D /* InjectorProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InjectorProvider.m; sourceTree = "<group>"; };
 		C738ED2021784D2C005F142D /* BlindsideModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlindsideModule.h; sourceTree = "<group>"; };
 		C738ED2121784D4C005F142D /* BlindsideModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlindsideModule.m; sourceTree = "<group>"; };
+		C76AF5FB218A9897004FB434 /* OHTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHTabBarViewController.h; sourceTree = "<group>"; };
+		C76AF5FC218A98AD004FB434 /* OHTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHTabBarViewController.m; sourceTree = "<group>"; };
+		C76AF601218A9F8E004FB434 /* OHTabBarViewControllerProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHTabBarViewControllerProvider.m; sourceTree = "<group>"; };
+		C76AF603218A9FB0004FB434 /* OHTabBarViewControllerProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHTabBarViewControllerProvider.h; sourceTree = "<group>"; };
+		C783E148218AE3A400158A41 /* OHTabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OHTabBarViewController.xib; sourceTree = "<group>"; };
 		C7C35FFF217716C7005D2610 /* ObjectHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7C36002217716C7005D2610 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C7C36003217716C7005D2610 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -125,6 +133,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C726D592218839F0006B3D94 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C76AF5FB218A9897004FB434 /* OHTabBarViewController.h */,
+				C76AF5FC218A98AD004FB434 /* OHTabBarViewController.m */,
+				C783E148218AE3A400158A41 /* OHTabBarViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		C738ED0F21782BA7005F142D /* login */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +203,15 @@
 			path = UILib;
 			sourceTree = "<group>";
 		};
+		C76AF600218A9F3E004FB434 /* providers */ = {
+			isa = PBXGroup;
+			children = (
+				C76AF603218A9FB0004FB434 /* OHTabBarViewControllerProvider.h */,
+				C76AF601218A9F8E004FB434 /* OHTabBarViewControllerProvider.m */,
+			);
+			path = providers;
+			sourceTree = "<group>";
+		};
 		C7C35FF6217716C7005D2610 = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +237,8 @@
 		C7C36001217716C7005D2610 /* ObjectHub */ = {
 			isa = PBXGroup;
 			children = (
+				C76AF600218A9F3E004FB434 /* providers */,
+				C726D592218839F0006B3D94 /* Controllers */,
 				C740F62E21786D6300B422EC /* UILib */,
 				C738ED1C21784C0A005F142D /* module */,
 				C738ED1121782BCB005F142D /* articles */,
@@ -350,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7C36012217716C9005D2610 /* LaunchScreen.storyboard in Resources */,
+				C783E149218AE3A400158A41 /* OHTabBarViewController.xib in Resources */,
 				C738ED1321782C21005F142D /* LoginViewController.xib in Resources */,
 				C7C3600F217716C9005D2610 /* Assets.xcassets in Resources */,
 			);
@@ -434,7 +464,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C738ED2221784D4C005F142D /* BlindsideModule.m in Sources */,
+				C76AF602218A9F8E004FB434 /* OHTabBarViewControllerProvider.m in Sources */,
 				C738ED1B21782CDD005F142D /* LoginViewControllerProvider.m in Sources */,
+				C76AF5FD218A98AD004FB434 /* OHTabBarViewController.m in Sources */,
 				C738ED1821782C70005F142D /* LoginViewController.m in Sources */,
 				C7C36004217716C7005D2610 /* AppDelegate.m in Sources */,
 				C7C36015217716C9005D2610 /* main.m in Sources */,

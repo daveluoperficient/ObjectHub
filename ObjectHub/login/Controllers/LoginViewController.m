@@ -7,6 +7,9 @@
 //
 
 #import "LoginViewController.h"
+#import "OHTabBarViewControllerProvider.h"
+#import "OHTabBarViewController.h"
+#import "Blindside.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface LoginViewController () <UITextFieldDelegate>
@@ -15,12 +18,31 @@
 @property (weak, nonatomic) IBOutlet UITextField *textFieldPassword;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
+@property (nonatomic, readonly) OHTabBarViewControllerProvider *tabBarViewControllerProvider;
+@property (nonatomic, readonly) UINavigationController *navigationController;
+
 @end
 
 @implementation LoginViewController
 
++ (BSInitializer *)bsInitializer {
+    return [BSInitializer initializerWithClass:self
+                                      selector:@selector(initWithNavigationController:andOHTabBarViewControllerProvider:)
+                                  argumentKeys:BS_DYNAMIC,[OHTabBarViewControllerProvider class], nil];
+}
+
+- (instancetype)initWithNavigationController:(UINavigationController *)navigationController andOHTabBarViewControllerProvider:(OHTabBarViewControllerProvider *)tabBarViewControllerProvider  {
+    self = [super init];
+    if (self) {
+        _navigationController = navigationController;
+        _tabBarViewControllerProvider = tabBarViewControllerProvider;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self setUpLayout];
 }
 
@@ -60,6 +82,11 @@
 
 -(BOOL)textFieldShouldClear:(UITextField *)textField {
     return YES;
+}
+
+- (IBAction)onLoginButtonTapped:(id)sender {
+    OHTabBarViewController *tabBarController = [_tabBarViewControllerProvider provideController];
+    [self.navigationController pushViewController:tabBarController animated:YES];
 }
 
 @end
