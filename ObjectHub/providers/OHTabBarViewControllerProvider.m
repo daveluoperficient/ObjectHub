@@ -1,11 +1,3 @@
-//
-//  OHTabBarControllerProvider.m
-//  ObjectHub
-//
-//  Created by dave.luo on 11/1/18.
-//  Copyright © 2018 dave.luo. All rights reserved.
-//
-
 #import "OHTabBarViewControllerProvider.h"
 #import "OHTabBarViewController.h"
 #import "Blindside.h"

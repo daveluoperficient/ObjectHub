@@ -11,6 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OHTabBarViewController">
             <connections>
+                <outlet property="tabBar" destination="LvQ-8J-avb" id="8rd-iI-8xY"/>
+                <outlet property="tabCollect" destination="hpW-PW-tAi" id="YmX-iw-zck"/>
+                <outlet property="tabHome" destination="96a-xS-0sW" id="CUc-VA-wEo"/>
+                <outlet property="tabMime" destination="dwP-cs-xWR" id="O8m-IG-Ekd"/>
+                <outlet property="tabNews" destination="OI7-PC-3cY" id="6U9-RG-SkZ"/>
+                <outlet property="tabPublish" destination="XLc-H6-7hd" id="CaM-5p-Bl5"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Byr-Xw-haT"/>
             </connections>
         </placeholder>
@@ -20,14 +26,33 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LvQ-8J-avb">
-                    <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                    <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="80" id="D08-yd-tvs"/>
+                        <constraint firstAttribute="height" constant="60" id="dGZ-9T-myD"/>
                     </constraints>
                     <items>
-                        <tabBarItem systemItem="favorites" id="96a-xS-0sW"/>
-                        <tabBarItem systemItem="more" id="OI7-PC-3cY"/>
+                        <tabBarItem title="首页" image="home" landscapeImage="home" selectedImage="home_selected" id="96a-xS-0sW" userLabel="home">
+                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-20"/>
+                            <inset key="largeContentSizeImageInsets" minX="1" minY="1" maxX="1" maxY="1"/>
+                            <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="30"/>
+                        </tabBarItem>
+                        <tabBarItem title="收藏" image="collect" selectedImage="collect_selected" id="hpW-PW-tAi" userLabel="collect">
+                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-20"/>
+                            <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="30"/>
+                        </tabBarItem>
+                        <tabBarItem title="" image="publish" selectedImage="publish_selected" id="XLc-H6-7hd" userLabel="publish">
+                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-12"/>
+                            <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="30"/>
+                        </tabBarItem>
+                        <tabBarItem title="消息" image="news" selectedImage="news_message" id="OI7-PC-3cY" userLabel="news">
+                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-20"/>
+                            <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="30"/>
+                        </tabBarItem>
+                        <tabBarItem title="我的" image="mine" selectedImage="mine_selected" id="dwP-cs-xWR" userLabel="mine">
+                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-20"/>
+                            <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="30"/>
+                        </tabBarItem>
                     </items>
                 </tabBar>
             </subviews>
@@ -40,4 +65,16 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
     </objects>
+    <resources>
+        <image name="collect" width="30" height="30"/>
+        <image name="collect_selected" width="30" height="30"/>
+        <image name="home" width="30" height="30"/>
+        <image name="home_selected" width="30" height="30"/>
+        <image name="mine" width="30" height="30"/>
+        <image name="mine_selected" width="30" height="30"/>
+        <image name="news" width="30" height="30"/>
+        <image name="news_message" width="30" height="30"/>
+        <image name="publish" width="34" height="27.5"/>
+        <image name="publish_selected" width="34" height="28"/>
+    </resources>
 </document>
