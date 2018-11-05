@@ -86,7 +86,8 @@
 
 - (IBAction)onLoginButtonTapped:(id)sender {
     OHTabBarViewController *tabBarController = [_tabBarViewControllerProvider provideController];
-    [self.navigationController pushViewController:tabBarController animated:YES];
+    self.view.window.rootViewController = tabBarController;
+    //[self.navigationController pushViewController:tabBarController animated:YES];
 }
 
 @end
