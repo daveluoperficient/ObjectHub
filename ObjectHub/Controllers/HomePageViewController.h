@@ -6,3 +6,7 @@
 + (instancetype)new UNAVAILABLE_ATTRIBUTE;
 
 @end
+
+@interface CollectionViewCell : UICollectionViewCell
+
+@end

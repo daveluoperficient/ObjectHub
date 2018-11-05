@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2565DD017A8F9E2604A3E642 /* libPods-ObjectHub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21BF1425E5496A2E6B289CD3 /* libPods-ObjectHub.a */; };
 		7AE70679E72C81501D245D14 /* libPods-ObjectHubUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE346C2A00540CDDD9F50E2 /* libPods-ObjectHubUITests.a */; };
+		C72A396321900E1100CABC7A /* OHFallsLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C72A396221900E1100CABC7A /* OHFallsLayout.m */; };
 		C72BA6E0218D86A00023F926 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C72BA6DF218D86A00023F926 /* HomePageViewController.m */; };
 		C72BA6E2218D871F0023F926 /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72BA6E1218D871F0023F926 /* HomePageViewController.xib */; };
 		C72BA6E5218D87EF0023F926 /* HomePageViewControllerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C72BA6E4218D87EF0023F926 /* HomePageViewControllerProvider.m */; };
@@ -54,6 +55,8 @@
 		984E57D6DD2DE78A96753D54 /* Pods-ObjectHubUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectHubUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjectHubUITests/Pods-ObjectHubUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9899B546AA02919272768711 /* Pods-ObjectHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObjectHub/Pods-ObjectHub.debug.xcconfig"; sourceTree = "<group>"; };
 		C0303B7FBA64655636752D77 /* libPods-ObjectHubTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ObjectHubTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C72A396121900E0000CABC7A /* OHFallsLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHFallsLayout.h; sourceTree = "<group>"; };
+		C72A396221900E1100CABC7A /* OHFallsLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHFallsLayout.m; sourceTree = "<group>"; };
 		C72BA6DE218D868C0023F926 /* HomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
 		C72BA6DF218D86A00023F926 /* HomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		C72BA6E1218D871F0023F926 /* HomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageViewController.xib; sourceTree = "<group>"; };
@@ -210,6 +213,8 @@
 		C740F62E21786D6300B422EC /* UILib */ = {
 			isa = PBXGroup;
 			children = (
+				C72A396121900E0000CABC7A /* OHFallsLayout.h */,
+				C72A396221900E1100CABC7A /* OHFallsLayout.m */,
 			);
 			path = UILib;
 			sourceTree = "<group>";
@@ -487,6 +492,7 @@
 				C7C36004217716C7005D2610 /* AppDelegate.m in Sources */,
 				C7C36015217716C9005D2610 /* main.m in Sources */,
 				C738ED1F21784C41005F142D /* InjectorProvider.m in Sources */,
+				C72A396321900E1100CABC7A /* OHFallsLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
