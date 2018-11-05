@@ -11,12 +11,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OHTabBarViewController">
             <connections>
-                <outlet property="tabBar" destination="LvQ-8J-avb" id="8rd-iI-8xY"/>
+                <outlet property="tabBar" destination="LvQ-8J-avb" id="u50-ad-DWf"/>
                 <outlet property="tabCollect" destination="hpW-PW-tAi" id="YmX-iw-zck"/>
                 <outlet property="tabHome" destination="96a-xS-0sW" id="CUc-VA-wEo"/>
                 <outlet property="tabMime" destination="dwP-cs-xWR" id="O8m-IG-Ekd"/>
                 <outlet property="tabNews" destination="OI7-PC-3cY" id="6U9-RG-SkZ"/>
                 <outlet property="tabPublish" destination="XLc-H6-7hd" id="CaM-5p-Bl5"/>
+                <outlet property="tabView" destination="fca-jP-UWg" id="SEn-2u-ekf"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Byr-Xw-haT"/>
             </connections>
         </placeholder>
@@ -55,14 +56,23 @@
                         </tabBarItem>
                     </items>
                 </tabBar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fca-jP-UWg">
+                    <rect key="frame" x="0.0" y="20" width="375" height="587"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="LvQ-8J-avb" firstAttribute="top" secondItem="fca-jP-UWg" secondAttribute="bottom" id="3nq-Dp-tFK"/>
                 <constraint firstItem="LvQ-8J-avb" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="A7J-NR-gLM"/>
+                <constraint firstItem="fca-jP-UWg" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="WIF-A9-hv9"/>
+                <constraint firstItem="fca-jP-UWg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ca1-4P-muY"/>
                 <constraint firstItem="LvQ-8J-avb" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="tsM-bM-zvM"/>
                 <constraint firstItem="LvQ-8J-avb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="za9-8b-5jz"/>
+                <constraint firstItem="fca-jP-UWg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="zuI-ox-Twn"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="135.19999999999999" y="100.29985007496252"/>
         </view>
     </objects>
     <resources>

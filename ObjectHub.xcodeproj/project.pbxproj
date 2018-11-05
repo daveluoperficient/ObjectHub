@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2565DD017A8F9E2604A3E642 /* libPods-ObjectHub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21BF1425E5496A2E6B289CD3 /* libPods-ObjectHub.a */; };
 		7AE70679E72C81501D245D14 /* libPods-ObjectHubUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE346C2A00540CDDD9F50E2 /* libPods-ObjectHubUITests.a */; };
+		C72BA6E0218D86A00023F926 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C72BA6DF218D86A00023F926 /* HomePageViewController.m */; };
+		C72BA6E2218D871F0023F926 /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72BA6E1218D871F0023F926 /* HomePageViewController.xib */; };
+		C72BA6E5218D87EF0023F926 /* HomePageViewControllerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C72BA6E4218D87EF0023F926 /* HomePageViewControllerProvider.m */; };
 		C738ED1321782C21005F142D /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C738ED1221782C21005F142D /* LoginViewController.xib */; };
 		C738ED1821782C70005F142D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C738ED1721782C70005F142D /* LoginViewController.m */; };
 		C738ED1B21782CDD005F142D /* LoginViewControllerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C738ED1A21782CDD005F142D /* LoginViewControllerProvider.m */; };
@@ -51,6 +54,11 @@
 		984E57D6DD2DE78A96753D54 /* Pods-ObjectHubUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectHubUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ObjectHubUITests/Pods-ObjectHubUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9899B546AA02919272768711 /* Pods-ObjectHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ObjectHub/Pods-ObjectHub.debug.xcconfig"; sourceTree = "<group>"; };
 		C0303B7FBA64655636752D77 /* libPods-ObjectHubTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ObjectHubTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C72BA6DE218D868C0023F926 /* HomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
+		C72BA6DF218D86A00023F926 /* HomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
+		C72BA6E1218D871F0023F926 /* HomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageViewController.xib; sourceTree = "<group>"; };
+		C72BA6E3218D87DB0023F926 /* HomePageViewControllerProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageViewControllerProvider.h; sourceTree = "<group>"; };
+		C72BA6E4218D87EF0023F926 /* HomePageViewControllerProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageViewControllerProvider.m; sourceTree = "<group>"; };
 		C738ED1221782C21005F142D /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		C738ED1421782C3D005F142D /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		C738ED1721782C70005F142D /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -139,6 +147,9 @@
 				C76AF5FB218A9897004FB434 /* OHTabBarViewController.h */,
 				C76AF5FC218A98AD004FB434 /* OHTabBarViewController.m */,
 				C783E148218AE3A400158A41 /* OHTabBarViewController.xib */,
+				C72BA6DE218D868C0023F926 /* HomePageViewController.h */,
+				C72BA6DF218D86A00023F926 /* HomePageViewController.m */,
+				C72BA6E1218D871F0023F926 /* HomePageViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -208,6 +219,8 @@
 			children = (
 				C76AF603218A9FB0004FB434 /* OHTabBarViewControllerProvider.h */,
 				C76AF601218A9F8E004FB434 /* OHTabBarViewControllerProvider.m */,
+				C72BA6E3218D87DB0023F926 /* HomePageViewControllerProvider.h */,
+				C72BA6E4218D87EF0023F926 /* HomePageViewControllerProvider.m */,
 			);
 			path = providers;
 			sourceTree = "<group>";
@@ -379,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7C36012217716C9005D2610 /* LaunchScreen.storyboard in Resources */,
+				C72BA6E2218D871F0023F926 /* HomePageViewController.xib in Resources */,
 				C783E149218AE3A400158A41 /* OHTabBarViewController.xib in Resources */,
 				C738ED1321782C21005F142D /* LoginViewController.xib in Resources */,
 				C7C3600F217716C9005D2610 /* Assets.xcassets in Resources */,
@@ -465,9 +479,11 @@
 			files = (
 				C738ED2221784D4C005F142D /* BlindsideModule.m in Sources */,
 				C76AF602218A9F8E004FB434 /* OHTabBarViewControllerProvider.m in Sources */,
+				C72BA6E0218D86A00023F926 /* HomePageViewController.m in Sources */,
 				C738ED1B21782CDD005F142D /* LoginViewControllerProvider.m in Sources */,
 				C76AF5FD218A98AD004FB434 /* OHTabBarViewController.m in Sources */,
 				C738ED1821782C70005F142D /* LoginViewController.m in Sources */,
+				C72BA6E5218D87EF0023F926 /* HomePageViewControllerProvider.m in Sources */,
 				C7C36004217716C7005D2610 /* AppDelegate.m in Sources */,
 				C7C36015217716C9005D2610 /* main.m in Sources */,
 				C738ED1F21784C41005F142D /* InjectorProvider.m in Sources */,
