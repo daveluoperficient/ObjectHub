@@ -8,9 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "MHeadImaView.h"
 #import "MImaLibTool.h"
-#import "MShowAllGroup.h"
 #import "PublishInteractionViewController.h"
 
 typedef enum {
@@ -37,7 +35,7 @@ typedef void (^menuSelectBlock)(id obj, menuSelectedType type);
 -(void)getSelectImageWithALAssetArray:(NSArray *)ALAssetArray thumbnailImageArray:(NSArray *)thumbnailImgArray;
 
 @end
-@interface HWImagePickerSheet : NSObject<UIImagePickerControllerDelegate,UIActionSheetDelegate,MShowAllGroupDelegate>{
+@interface HWImagePickerSheet : NSObject<UIImagePickerControllerDelegate,UIActionSheetDelegate>{
     UIImagePickerController *imaPic;
     UIViewController *viewController;
 }

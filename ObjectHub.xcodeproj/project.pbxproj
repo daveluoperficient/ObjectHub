@@ -20,18 +20,10 @@
 		C72EA94021A44EBE00752339 /* JJMainScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA93621A44EBE00752339 /* JJMainScrollView.m */; };
 		C72EA94221A44EBE00752339 /* JJPhotoManeger.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA93821A44EBE00752339 /* JJPhotoManeger.m */; };
 		C72EA94321A44EBE00752339 /* HWImagePickerSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA93C21A44EBE00752339 /* HWImagePickerSheet.m */; };
-		C72EA95321A4520700752339 /* MImaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA94621A4520600752339 /* MImaCell.m */; };
-		C72EA95421A4520700752339 /* MGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72EA94721A4520600752339 /* MGroupCell.xib */; };
-		C72EA95521A4520700752339 /* MHeaderImaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA94921A4520600752339 /* MHeaderImaCell.m */; };
 		C72EA95621A4520700752339 /* MFlowLayOut.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA94C21A4520700752339 /* MFlowLayOut.m */; };
-		C72EA95721A4520700752339 /* MHeadImaView.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA94D21A4520700752339 /* MHeadImaView.m */; };
-		C72EA95821A4520700752339 /* MGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA94E21A4520700752339 /* MGroupCell.m */; };
 		C72EA95921A4520700752339 /* MImaLibTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA95121A4520700752339 /* MImaLibTool.m */; };
-		C72EA95A21A4520700752339 /* MImaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72EA95221A4520700752339 /* MImaCell.xib */; };
-		C72EA96521A452D000752339 /* MShowAllGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA95C21A452CF00752339 /* MShowAllGroup.m */; };
 		C72EA96721A452D000752339 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA95F21A452D000752339 /* NSData+ImageContentType.m */; };
 		C72EA96821A452D000752339 /* none.png in Resources */ = {isa = PBXBuildFile; fileRef = C72EA96021A452D000752339 /* none.png */; };
-		C72EA96921A452D000752339 /* MShowGroupAllSet.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA96221A452D000752339 /* MShowGroupAllSet.m */; };
 		C72EA98421A4533200752339 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA96C21A4532F00752339 /* SDWebImagePrefetcher.m */; };
 		C72EA98521A4533200752339 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA96E21A4533000752339 /* SDWebImageDownloader.m */; };
 		C72EA98621A4533200752339 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA97021A4533000752339 /* UIImageView+HighlightedWebCache.m */; };
@@ -114,27 +106,13 @@
 		C72EA93B21A44EBE00752339 /* ImagePickerDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePickerDefine.h; sourceTree = "<group>"; };
 		C72EA93C21A44EBE00752339 /* HWImagePickerSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWImagePickerSheet.m; sourceTree = "<group>"; };
 		C72EA93D21A44EBE00752339 /* JJMainScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJMainScrollView.h; sourceTree = "<group>"; };
-		C72EA94521A4520600752339 /* MImaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MImaCell.h; sourceTree = "<group>"; };
-		C72EA94621A4520600752339 /* MImaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MImaCell.m; sourceTree = "<group>"; };
-		C72EA94721A4520600752339 /* MGroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGroupCell.xib; sourceTree = "<group>"; };
-		C72EA94821A4520600752339 /* MGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGroupCell.h; sourceTree = "<group>"; };
-		C72EA94921A4520600752339 /* MHeaderImaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHeaderImaCell.m; sourceTree = "<group>"; };
-		C72EA94A21A4520600752339 /* MHeadImaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHeadImaView.h; sourceTree = "<group>"; };
 		C72EA94B21A4520600752339 /* MFlowLayOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFlowLayOut.h; sourceTree = "<group>"; };
 		C72EA94C21A4520700752339 /* MFlowLayOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFlowLayOut.m; sourceTree = "<group>"; };
-		C72EA94D21A4520700752339 /* MHeadImaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHeadImaView.m; sourceTree = "<group>"; };
-		C72EA94E21A4520700752339 /* MGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGroupCell.m; sourceTree = "<group>"; };
 		C72EA94F21A4520700752339 /* MImaLibTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MImaLibTool.h; sourceTree = "<group>"; };
-		C72EA95021A4520700752339 /* MHeaderImaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHeaderImaCell.h; sourceTree = "<group>"; };
 		C72EA95121A4520700752339 /* MImaLibTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MImaLibTool.m; sourceTree = "<group>"; };
-		C72EA95221A4520700752339 /* MImaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MImaCell.xib; sourceTree = "<group>"; };
-		C72EA95C21A452CF00752339 /* MShowAllGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MShowAllGroup.m; sourceTree = "<group>"; };
 		C72EA95F21A452D000752339 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ImageContentType.m"; sourceTree = "<group>"; };
 		C72EA96021A452D000752339 /* none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = none.png; sourceTree = "<group>"; };
-		C72EA96121A452D000752339 /* MShowGroupAllSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MShowGroupAllSet.h; sourceTree = "<group>"; };
-		C72EA96221A452D000752339 /* MShowGroupAllSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MShowGroupAllSet.m; sourceTree = "<group>"; };
 		C72EA96321A452D000752339 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
-		C72EA96421A452D000752339 /* MShowAllGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MShowAllGroup.h; sourceTree = "<group>"; };
 		C72EA96B21A4532F00752339 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		C72EA96C21A4532F00752339 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImagePrefetcher.m; sourceTree = "<group>"; };
 		C72EA96D21A4532F00752339 /* UIButton+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WebCache.h"; sourceTree = "<group>"; };
@@ -299,16 +277,6 @@
 			children = (
 				C72EA94B21A4520600752339 /* MFlowLayOut.h */,
 				C72EA94C21A4520700752339 /* MFlowLayOut.m */,
-				C72EA94821A4520600752339 /* MGroupCell.h */,
-				C72EA94E21A4520700752339 /* MGroupCell.m */,
-				C72EA94721A4520600752339 /* MGroupCell.xib */,
-				C72EA95021A4520700752339 /* MHeaderImaCell.h */,
-				C72EA94921A4520600752339 /* MHeaderImaCell.m */,
-				C72EA94A21A4520600752339 /* MHeadImaView.h */,
-				C72EA94D21A4520700752339 /* MHeadImaView.m */,
-				C72EA94521A4520600752339 /* MImaCell.h */,
-				C72EA94621A4520600752339 /* MImaCell.m */,
-				C72EA95221A4520700752339 /* MImaCell.xib */,
 				C72EA94F21A4520700752339 /* MImaLibTool.h */,
 				C72EA95121A4520700752339 /* MImaLibTool.m */,
 			);
@@ -318,10 +286,6 @@
 		C72EA95B21A452B800752339 /* MImgPicker */ = {
 			isa = PBXGroup;
 			children = (
-				C72EA96421A452D000752339 /* MShowAllGroup.h */,
-				C72EA95C21A452CF00752339 /* MShowAllGroup.m */,
-				C72EA96121A452D000752339 /* MShowGroupAllSet.h */,
-				C72EA96221A452D000752339 /* MShowGroupAllSet.m */,
 				C72EA96021A452D000752339 /* none.png */,
 				C72EA96321A452D000752339 /* NSData+ImageContentType.h */,
 				C72EA95F21A452D000752339 /* NSData+ImageContentType.m */,
@@ -641,8 +605,6 @@
 			files = (
 				C7C36012217716C9005D2610 /* LaunchScreen.storyboard in Resources */,
 				C72EA96821A452D000752339 /* none.png in Resources */,
-				C72EA95A21A4520700752339 /* MImaCell.xib in Resources */,
-				C72EA95421A4520700752339 /* MGroupCell.xib in Resources */,
 				C72BA6E2218D871F0023F926 /* HomePageViewController.xib in Resources */,
 				C783E149218AE3A400158A41 /* OHTabBarViewController.xib in Resources */,
 				C72EA92F21A44E2600752339 /* HWCollectionViewCell.xib in Resources */,
@@ -760,34 +722,28 @@
 				C7903CAD2197FFD200F045D6 /* PublishInteractionViewControllerProvider.m in Sources */,
 				C738ED1B21782CDD005F142D /* LoginViewControllerProvider.m in Sources */,
 				C72EA92E21A44E2600752339 /* HWCollectionViewCell.m in Sources */,
-				C72EA95321A4520700752339 /* MImaCell.m in Sources */,
 				C72EA94221A44EBE00752339 /* JJPhotoManeger.m in Sources */,
 				C72EA98C21A4533200752339 /* SDWebImageDecoder.m in Sources */,
 				C72EA98821A4533200752339 /* SDWebImageCompat.m in Sources */,
 				C76AF5FD218A98AD004FB434 /* OHTabBarViewController.m in Sources */,
 				C72EA98F21A4533200752339 /* UIImage+GIF.m in Sources */,
-				C72EA95521A4520700752339 /* MHeaderImaCell.m in Sources */,
 				C738ED1821782C70005F142D /* LoginViewController.m in Sources */,
 				C72EA98A21A4533200752339 /* UIImage+MultiFormat.m in Sources */,
 				C72EA99A21A453BD00752339 /* SDDemoItemView.m in Sources */,
-				C72EA96921A452D000752339 /* MShowGroupAllSet.m in Sources */,
 				C72BA6E5218D87EF0023F926 /* HomePageViewControllerProvider.m in Sources */,
 				C7C36004217716C7005D2610 /* AppDelegate.m in Sources */,
 				C72EA98D21A4533200752339 /* UIButton+WebCache.m in Sources */,
-				C72EA95721A4520700752339 /* MHeadImaView.m in Sources */,
 				C72EA99C21A453BD00752339 /* SDLoopProgressView.m in Sources */,
 				C72EA93F21A44EBE00752339 /* JJOneScrollView.m in Sources */,
 				C7C36015217716C9005D2610 /* main.m in Sources */,
 				C72EA98921A4533200752339 /* SDWebImageManager.m in Sources */,
 				C72EA94021A44EBE00752339 /* JJMainScrollView.m in Sources */,
-				C72EA96521A452D000752339 /* MShowAllGroup.m in Sources */,
 				C72EA98421A4533200752339 /* SDWebImagePrefetcher.m in Sources */,
 				C72EA95621A4520700752339 /* MFlowLayOut.m in Sources */,
 				C738ED1F21784C41005F142D /* InjectorProvider.m in Sources */,
 				C72A396321900E1100CABC7A /* OHFallsLayout.m in Sources */,
 				C72EA95921A4520700752339 /* MImaLibTool.m in Sources */,
 				C72EA98521A4533200752339 /* SDWebImageDownloader.m in Sources */,
-				C72EA95821A4520700752339 /* MGroupCell.m in Sources */,
 				C7903C2F2197C2D300F045D6 /* PublishInteractionViewController.m in Sources */,
 				C72EA96721A452D000752339 /* NSData+ImageContentType.m in Sources */,
 				C72EA94321A44EBE00752339 /* HWImagePickerSheet.m in Sources */,

@@ -3,13 +3,15 @@
 #import "HWCollectionViewCell.h"
 #import "JJPhotoManeger.h"
 #import "HWImagePickerSheet.h"
+#import "TZImagePickerController.h"
 #import <Photos/Photos.h>
 
 
-@interface PublishInteractionViewController () <UICollectionViewDelegate,UICollectionViewDataSource,HWImagePickerSheetDelegate,PublishInteractionDelegate,JJPhotoDelegate,UITextViewDelegate>
+@interface PublishInteractionViewController () <UICollectionViewDelegate,UICollectionViewDataSource,PublishInteractionDelegate,TZImagePickerControllerDelegate,JJPhotoDelegate,UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *contentView;
 @property (weak, nonatomic) IBOutlet UITextView *interactionTextView;
+@property (weak, nonatomic) UIViewController *viewController;
 
 @property (nonatomic) NSMutableArray *imageArray;
 
@@ -18,6 +20,8 @@
 @property (nonatomic) UILabel *addImageStrLabel;
 @property (nonatomic, strong) HWImagePickerSheet *imgPickerActionSheet;
 @property (nonatomic, strong) NSString *inputHint;
+
+@property (nonatomic) UIImagePickerController *imaPic;
 
 @end
 
@@ -147,19 +151,8 @@
 }
 
 - (void)addNewImg{
-    if (!_imgPickerActionSheet) {
-        _imgPickerActionSheet = [[HWImagePickerSheet alloc] init];
-        _imgPickerActionSheet.delegate = self;
-    }
-    if (_arrSelected) {
-        _imgPickerActionSheet.arrSelected = _arrSelected;
-    }
-    _imgPickerActionSheet.maxCount = MAX_PICK_NUM;
     NSMutableArray *selectedAsset = [[NSMutableArray alloc]initWithArray:self.arrSelected];
-    [self.imageArray removeAllObjects];
-    [self.arrSelected removeAllObjects];
-    [self.bigImageArray removeAllObjects];
-    [_imgPickerActionSheet showImgPickerActionSheetInView:self selectedAssets:selectedAsset];
+    [self showImgPickerActionSheetInView:self selectedAssets:selectedAsset];
 }
 
 #pragma PublishInteractionDelegate method
@@ -218,4 +211,50 @@
     return YES;
 }
 
+#pragma show img picker
+
+-(void)showImgPickerActionSheetInView:(UIViewController *)controller selectedAssets:(NSMutableArray *)selectedAssetes {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"选择照片" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    UIAlertAction *actionCamera = [UIAlertAction actionWithTitle:[NSString stringWithFormat:@"拍照"] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if (!self.imaPic) {
+            self.imaPic = [[UIImagePickerController alloc] init];
+        }
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            self.imaPic.sourceType = UIImagePickerControllerSourceTypeCamera;
+            //self.imaPic.delegate = self;
+            [self.viewController presentViewController:self.imaPic animated:NO completion:nil];
+        }
+        
+    }];
+    
+    UIAlertAction *actionAlbum = [UIAlertAction actionWithTitle:[NSString stringWithFormat:@"相册"] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        [self.imageArray removeAllObjects];
+        [self.arrSelected removeAllObjects];
+        [self.bigImageArray removeAllObjects];
+        
+        TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:MAX_PICK_NUM delegate:self];
+        imagePickerVc.selectedAssets = selectedAssetes;
+        
+        [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
+            [self didFinishSelectImage:photos andAssets:assets];
+        }];
+        
+        [imagePickerVc setDoneBtnTitleStr:@"完成"];
+        [imagePickerVc setCancelBtnTitleStr:@"取消"];
+        [imagePickerVc setPreviewBtnTitleStr:@"预览"];
+        [imagePickerVc setFullImageBtnTitleStr:@"原图"];
+        
+        [controller presentViewController:imagePickerVc animated:YES completion:nil];
+    }];
+    [alertController addAction:actionCancel];
+    [alertController addAction:actionCamera];
+    [alertController addAction:actionAlbum];
+    _viewController = controller;
+    [_viewController presentViewController:alertController animated:YES completion:nil];
+    
+}
 @end

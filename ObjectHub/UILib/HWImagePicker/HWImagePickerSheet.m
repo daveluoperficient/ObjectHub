@@ -65,29 +65,6 @@
     
 }
 
-#pragma mark - 加载照片数据
-- (void)loadImgDataAndShowAllGroup{
-    if (!_arrSelected) {
-        self.arrSelected = [NSMutableArray array];
-    }
-    __weak typeof(self) weakSelf = self;
-    [[MImaLibTool shareMImaLibTool] getAllGroupWithArrObj:^(NSArray *arrObj) {
-        if (arrObj && arrObj.count > 0) {
-            self.arrGroup = arrObj;
-            if ( self.arrGroup.count > 0) {
-                MShowAllGroup *svc = [[MShowAllGroup alloc] initWithArrGroup:self.arrGroup arrSelected:self.arrSelected];
-                svc.delegate = self;
-                UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:svc];
-                if (weakSelf.arrSelected) {
-                    svc.arrSeleted = weakSelf.arrSelected;
-                    svc.mvc.arrSelected = weakSelf.arrSelected;
-                }
-                svc.maxCout = weakSelf.maxCount;
-                [self->viewController presentViewController:nav animated:YES completion:nil];
-            }
-        }
-    }];
-}
 #pragma mark - 拍照获得数据
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     UIImage *theImage = nil;
@@ -111,7 +88,6 @@
                     if (asset) {
                         
                         [_arrSelected addObject:asset];
-                        [self finishSelectImg];
                         [picker dismissViewControllerAnimated:NO completion:nil];
                     }
                 } failureBlock:^(NSError *error) {
