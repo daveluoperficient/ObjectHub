@@ -20,7 +20,6 @@
 		C72EA94021A44EBE00752339 /* JJMainScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA93621A44EBE00752339 /* JJMainScrollView.m */; };
 		C72EA94221A44EBE00752339 /* JJPhotoManeger.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA93821A44EBE00752339 /* JJPhotoManeger.m */; };
 		C72EA94321A44EBE00752339 /* HWImagePickerSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA93C21A44EBE00752339 /* HWImagePickerSheet.m */; };
-		C72EA95621A4520700752339 /* MFlowLayOut.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA94C21A4520700752339 /* MFlowLayOut.m */; };
 		C72EA95921A4520700752339 /* MImaLibTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA95121A4520700752339 /* MImaLibTool.m */; };
 		C72EA96721A452D000752339 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA95F21A452D000752339 /* NSData+ImageContentType.m */; };
 		C72EA96821A452D000752339 /* none.png in Resources */ = {isa = PBXBuildFile; fileRef = C72EA96021A452D000752339 /* none.png */; };
@@ -106,8 +105,6 @@
 		C72EA93B21A44EBE00752339 /* ImagePickerDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePickerDefine.h; sourceTree = "<group>"; };
 		C72EA93C21A44EBE00752339 /* HWImagePickerSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWImagePickerSheet.m; sourceTree = "<group>"; };
 		C72EA93D21A44EBE00752339 /* JJMainScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJMainScrollView.h; sourceTree = "<group>"; };
-		C72EA94B21A4520600752339 /* MFlowLayOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFlowLayOut.h; sourceTree = "<group>"; };
-		C72EA94C21A4520700752339 /* MFlowLayOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFlowLayOut.m; sourceTree = "<group>"; };
 		C72EA94F21A4520700752339 /* MImaLibTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MImaLibTool.h; sourceTree = "<group>"; };
 		C72EA95121A4520700752339 /* MImaLibTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MImaLibTool.m; sourceTree = "<group>"; };
 		C72EA95F21A452D000752339 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ImageContentType.m"; sourceTree = "<group>"; };
@@ -275,8 +272,6 @@
 		C72EA94421A451F900752339 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				C72EA94B21A4520600752339 /* MFlowLayOut.h */,
-				C72EA94C21A4520700752339 /* MFlowLayOut.m */,
 				C72EA94F21A4520700752339 /* MImaLibTool.h */,
 				C72EA95121A4520700752339 /* MImaLibTool.m */,
 			);
@@ -739,7 +734,6 @@
 				C72EA98921A4533200752339 /* SDWebImageManager.m in Sources */,
 				C72EA94021A44EBE00752339 /* JJMainScrollView.m in Sources */,
 				C72EA98421A4533200752339 /* SDWebImagePrefetcher.m in Sources */,
-				C72EA95621A4520700752339 /* MFlowLayOut.m in Sources */,
 				C738ED1F21784C41005F142D /* InjectorProvider.m in Sources */,
 				C72A396321900E1100CABC7A /* OHFallsLayout.m in Sources */,
 				C72EA95921A4520700752339 /* MImaLibTool.m in Sources */,
