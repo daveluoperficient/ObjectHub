@@ -7,6 +7,7 @@ target 'ObjectHub' do
 
   # Pods for ObjectHub
   pod 'AFNetworking'
+  pod 'TZImagePickerController'
   pod 'Blindside','1.3.1'
 
   target 'ObjectHubTests' do

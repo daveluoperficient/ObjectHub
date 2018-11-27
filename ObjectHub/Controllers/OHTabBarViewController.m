@@ -1,6 +1,8 @@
 #import "OHTabBarViewController.h"
 #import "HomePageViewControllerProvider.h"
 #import "HomePageViewController.h"
+#import "PublishInteractionViewController.h"
+#import "PublishInteractionViewControllerProvider.h"
 #import "Blindside.h"
 
 @interface OHTabBarViewController () <UITabBarDelegate>
@@ -14,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIView *tabView;
 
 @property (nonatomic, readwrite) HomePageViewControllerProvider *homePageViewControllerProvider;
+@property (nonatomic, readwrite) PublishInteractionViewControllerProvider *publishInteractionViewControllerProvider;
 
 @property (nonatomic, readwrite) NSMutableArray *subViews;
 
@@ -25,15 +28,16 @@
 
 + (BSInitializer *)bsInitializer {
     return [BSInitializer initializerWithClass:self
-                                      selector:@selector(initViewControllerWithHomePageViewControllerProvider:)
-                                  argumentKeys:[HomePageViewControllerProvider class],nil
+                                      selector:@selector(initViewControllerWithHomePageViewControllerProvider:publishInteractionViewControllerProvider:)
+                                  argumentKeys:[HomePageViewControllerProvider class], [PublishInteractionViewControllerProvider class],nil
                                   ];
 }
 
-- (instancetype)initViewControllerWithHomePageViewControllerProvider:(HomePageViewControllerProvider *) homePageViewControllerProvider {
+- (instancetype)initViewControllerWithHomePageViewControllerProvider:(HomePageViewControllerProvider *) homePageViewControllerProvider publishInteractionViewControllerProvider:(PublishInteractionViewControllerProvider *) publishInteractionViewControllerProvider {
     self = [super init];
     if (self) {
         _homePageViewControllerProvider = homePageViewControllerProvider;
+        _publishInteractionViewControllerProvider = publishInteractionViewControllerProvider;
     }
     return self;
 }
@@ -43,23 +47,25 @@
     
     [self setUpLayoutConstraints];
     
-    [_tabBar setSelectedItem:_tabHome];
     _tabBar.tintColor = [UIColor colorWithRed:249.0/255.0 green:94.0/255 blue:93.0/255 alpha:1];
     _tabBar.delegate = self;
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     HomePageViewController *homePageviewController = [self.homePageViewControllerProvider provideController];
+    UINavigationController *homePage = [[UINavigationController alloc]initWithRootViewController:homePageviewController];
     UIViewController *collectPageviewController = [[UIViewController alloc] init];
-    UIViewController *publishPageviewController = [[UIViewController alloc] init];
+    PublishInteractionViewController *publishPageviewController = [self.publishInteractionViewControllerProvider provideController];
+    UINavigationController *publishPage = [[UINavigationController alloc]initWithRootViewController:publishPageviewController];
     UIViewController *newsPageviewController = [[UIViewController alloc] init];
     UIViewController *minePageviewController = [[UIViewController alloc] init];
+    
     self.subViews = [[NSMutableArray alloc] init];
-    [self.subViews addObject:homePageviewController.view];
-    [self.subViews addObject:collectPageviewController.view];
-    [self.subViews addObject:publishPageviewController.view];
-    [self.subViews addObject:newsPageviewController.view];
-    [self.subViews addObject:minePageviewController.view];
+    [self.subViews addObject:homePage];
+    [self.subViews addObject:collectPageviewController];
+    [self.subViews addObject:publishPage];
+    [self.subViews addObject:newsPageviewController];
+    [self.subViews addObject:minePageviewController];
     
     [self.tabHome setTag:0];
     [self.tabCollect setTag:1];
@@ -68,6 +74,8 @@
     [self.tabMime setTag:4];
     
     [self setUpSubViews];
+    
+    [_tabBar setSelectedItem:_tabHome];
 }
 
 - (void)setUpLayoutConstraints {
@@ -107,18 +115,18 @@
 }
 
 - (void)setUpSubViews {
-    UIView *view = [self.subViews objectAtIndex:0];
-    view.frame = self.tabView.bounds;
-    [self.tabView addSubview:view];
+    UIViewController *vc = [self.subViews objectAtIndex:0];
+    vc.view.frame = self.tabView.bounds;
+    [self.tabView addSubview:vc.view];
 }
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     for (UIView *subviews in [self.tabView subviews]) {
         [subviews removeFromSuperview];
     }
-    UIView *view = [self.subViews objectAtIndex:item.tag];
-    view.frame = self.tabView.bounds;
-    [self.tabView addSubview:view];
+    UIViewController *vc = [self.subViews objectAtIndex:item.tag];
+    vc.view.frame = self.tabView.bounds;
+    [self.tabView addSubview:vc.view];
 }
 
 @end
