@@ -1,5 +1,6 @@
 #import "GuideViewControllerProvider.h"
 #import "GuideViewController.h"
+#import "LoginViewControllerProvider.h"
 #import "Blindside.h"
 
 @interface GuideViewControllerProvider ()
@@ -10,8 +11,9 @@
 
 @implementation GuideViewControllerProvider
 
-- (GuideViewController *)provideController {
-    return [self.injector getInstance:[GuideViewController class]];
+
+- (GuideViewController *)provideControllerWithLoginViewControllerProvider:(LoginViewControllerProvider *)loginViewControllerProvider {
+    return [self.injector getInstance:[GuideViewController class] withArgs:loginViewControllerProvider, nil];
 }
 
 @end
