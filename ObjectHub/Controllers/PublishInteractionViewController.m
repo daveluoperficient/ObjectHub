@@ -37,7 +37,6 @@
     _inputHint = @"这一刻的想法...";
     _interactionTextView.text = _inputHint;
     _interactionTextView.textColor = [UIColor lightGrayColor];
-    [_interactionTextView becomeFirstResponder];
     _interactionTextView.delegate = self;
 }
 

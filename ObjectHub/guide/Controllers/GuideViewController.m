@@ -1,12 +1,7 @@
-//
-//  GuideViewController.m
-//  ObjectHub
-//
-//  Created by lester.ji on 2018/11/1.
-//  Copyright © 2018年 dave.luo. All rights reserved.
-//
-
 #import "GuideViewController.h"
+#import "LoginViewControllerProvider.h"
+#import "LoginViewController.h"
+#import "Blindside.h"
 
 #define kImageCount 4
 #define kAfterDelayTime 0.3 //最后按钮显示的延迟时间
@@ -18,9 +13,27 @@
 @property (weak, nonatomic) IBOutlet UIPageControl *guidePageControll;
 @property (weak, nonatomic) IBOutlet UIButton *toLoginPageButton;
 
+@property (weak, nonatomic) LoginViewControllerProvider *loginViewControllerProvider;
+@property (nonatomic, readonly) UINavigationController *navigationController;
+
 @end
 
 @implementation GuideViewController
+
++ (BSInitializer *)bsInitializer {
+    return [BSInitializer initializerWithClass:self
+                                      selector:@selector(initWithLoginViewControllerProvider:)
+                                  argumentKeys:BS_DYNAMIC, nil];
+}
+
+- (instancetype)initWithLoginViewControllerProvider:(LoginViewControllerProvider *)loginViewControllerProvider  {
+    self = [super init];
+    if (self) {
+        _navigationController = [[UINavigationController alloc] init];
+        _loginViewControllerProvider = loginViewControllerProvider;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -66,5 +79,11 @@
     _guidePageControll.currentPage = scrollView.contentOffset.x / self.view.bounds.size.width;
     [self.toLoginPageButton setHidden:_guidePageControll.currentPage == 3 ? NO : YES];
 }
+
+- (IBAction)onLoginPageButtonTapped:(id)sender {
+    LoginViewController *loginViewController = [_loginViewControllerProvider provideControllerWithNavigationController:self.navigationController];
+    [self presentViewController:loginViewController animated:YES completion:nil];
+}
+
 
 @end
