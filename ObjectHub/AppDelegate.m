@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "LoginViewControllerProvider.h"
+#import "GuideViewController.h"
+#import "GuideViewControllerProvider.h"
 #import "Blindside.h"
 #import "InjectorProvider.h"
 
@@ -16,6 +18,7 @@
 
 @property (nonatomic) id<BSBinder, BSInjector> injector;
 @property (nonatomic) LoginViewControllerProvider *loginViewControllerProvider;
+@property (nonatomic) GuideViewControllerProvider *guideViewControllerProvider;
 
 @end
 
@@ -27,9 +30,11 @@
     [self setupDependencies];
     UINavigationController *navigationController = [[UINavigationController alloc]init];
     navigationController.navigationBarHidden = YES;
-    LoginViewController *loginViewController = [self.loginViewControllerProvider provideControllerWithNavigationController:navigationController];
+    //LoginViewController *loginViewController = [self.loginViewControllerProvider provideControllerWithNavigationController:navigationController];
     
-    [navigationController addChildViewController:loginViewController];
+    GuideViewController *guideViewController = [self.guideViewControllerProvider provideController];
+    
+    [navigationController addChildViewController:guideViewController];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -43,6 +48,7 @@
 - (void)setupDependencies {
     self.injector = (id)[InjectorProvider injector];
     self.loginViewControllerProvider = [self.injector getInstance:[LoginViewControllerProvider class]];
+    self.guideViewControllerProvider = [self.injector getInstance:[GuideViewControllerProvider class]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

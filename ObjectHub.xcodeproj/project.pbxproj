@@ -46,6 +46,9 @@
 		C738ED2221784D4C005F142D /* BlindsideModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C738ED2121784D4C005F142D /* BlindsideModule.m */; };
 		C76AF5FD218A98AD004FB434 /* OHTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C76AF5FC218A98AD004FB434 /* OHTabBarViewController.m */; };
 		C76AF602218A9F8E004FB434 /* OHTabBarViewControllerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C76AF601218A9F8E004FB434 /* OHTabBarViewControllerProvider.m */; };
+		C777324421AE7E6F00CC90CB /* GuideViewControllerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C777323E21AE7E6F00CC90CB /* GuideViewControllerProvider.m */; };
+		C777324521AE7E6F00CC90CB /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C777324221AE7E6F00CC90CB /* GuideViewController.m */; };
+		C777324621AE7E6F00CC90CB /* GuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C777324321AE7E6F00CC90CB /* GuideViewController.xib */; };
 		C783E149218AE3A400158A41 /* OHTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C783E148218AE3A400158A41 /* OHTabBarViewController.xib */; };
 		C7903C2F2197C2D300F045D6 /* PublishInteractionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7903C2E2197C2D300F045D6 /* PublishInteractionViewController.m */; };
 		C7903C312197C30B00F045D6 /* PublishInteractionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7903C302197C30B00F045D6 /* PublishInteractionViewController.xib */; };
@@ -157,6 +160,11 @@
 		C76AF5FC218A98AD004FB434 /* OHTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHTabBarViewController.m; sourceTree = "<group>"; };
 		C76AF601218A9F8E004FB434 /* OHTabBarViewControllerProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHTabBarViewControllerProvider.m; sourceTree = "<group>"; };
 		C76AF603218A9FB0004FB434 /* OHTabBarViewControllerProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHTabBarViewControllerProvider.h; sourceTree = "<group>"; };
+		C777323E21AE7E6F00CC90CB /* GuideViewControllerProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewControllerProvider.m; sourceTree = "<group>"; };
+		C777323F21AE7E6F00CC90CB /* GuideViewControllerProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideViewControllerProvider.h; sourceTree = "<group>"; };
+		C777324121AE7E6F00CC90CB /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
+		C777324221AE7E6F00CC90CB /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
+		C777324321AE7E6F00CC90CB /* GuideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GuideViewController.xib; sourceTree = "<group>"; };
 		C783E148218AE3A400158A41 /* OHTabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OHTabBarViewController.xib; sourceTree = "<group>"; };
 		C7903C2D2197C2BD00F045D6 /* PublishInteractionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublishInteractionViewController.h; sourceTree = "<group>"; };
 		C7903C2E2197C2D300F045D6 /* PublishInteractionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublishInteractionViewController.m; sourceTree = "<group>"; };
@@ -430,6 +438,34 @@
 			path = providers;
 			sourceTree = "<group>";
 		};
+		C777323C21AE7E6F00CC90CB /* guide */ = {
+			isa = PBXGroup;
+			children = (
+				C777323D21AE7E6F00CC90CB /* Providers */,
+				C777324021AE7E6F00CC90CB /* Controllers */,
+			);
+			path = guide;
+			sourceTree = "<group>";
+		};
+		C777323D21AE7E6F00CC90CB /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				C777323E21AE7E6F00CC90CB /* GuideViewControllerProvider.m */,
+				C777323F21AE7E6F00CC90CB /* GuideViewControllerProvider.h */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		C777324021AE7E6F00CC90CB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C777324121AE7E6F00CC90CB /* GuideViewController.h */,
+				C777324221AE7E6F00CC90CB /* GuideViewController.m */,
+				C777324321AE7E6F00CC90CB /* GuideViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		C7C35FF6217716C7005D2610 = {
 			isa = PBXGroup;
 			children = (
@@ -455,6 +491,7 @@
 		C7C36001217716C7005D2610 /* ObjectHub */ = {
 			isa = PBXGroup;
 			children = (
+				C777323C21AE7E6F00CC90CB /* guide */,
 				C72FBAF62192810500C589BD /* APIs */,
 				C76AF600218A9F3E004FB434 /* providers */,
 				C726D592218839F0006B3D94 /* Controllers */,
@@ -602,6 +639,7 @@
 				C72EA96821A452D000752339 /* none.png in Resources */,
 				C72BA6E2218D871F0023F926 /* HomePageViewController.xib in Resources */,
 				C783E149218AE3A400158A41 /* OHTabBarViewController.xib in Resources */,
+				C777324621AE7E6F00CC90CB /* GuideViewController.xib in Resources */,
 				C72EA92F21A44E2600752339 /* HWCollectionViewCell.xib in Resources */,
 				C738ED1321782C21005F142D /* LoginViewController.xib in Resources */,
 				C7C3600F217716C9005D2610 /* Assets.xcassets in Resources */,
@@ -713,6 +751,7 @@
 				C72EA98B21A4533200752339 /* SDWebImageDownloaderOperation.m in Sources */,
 				C72EA98721A4533200752339 /* UIView+WebCacheOperation.m in Sources */,
 				C72EA99B21A453BD00752339 /* SDImageCache.m in Sources */,
+				C777324421AE7E6F00CC90CB /* GuideViewControllerProvider.m in Sources */,
 				C72BA6E0218D86A00023F926 /* HomePageViewController.m in Sources */,
 				C7903CAD2197FFD200F045D6 /* PublishInteractionViewControllerProvider.m in Sources */,
 				C738ED1B21782CDD005F142D /* LoginViewControllerProvider.m in Sources */,
@@ -727,6 +766,7 @@
 				C72EA99A21A453BD00752339 /* SDDemoItemView.m in Sources */,
 				C72BA6E5218D87EF0023F926 /* HomePageViewControllerProvider.m in Sources */,
 				C7C36004217716C7005D2610 /* AppDelegate.m in Sources */,
+				C777324521AE7E6F00CC90CB /* GuideViewController.m in Sources */,
 				C72EA98D21A4533200752339 /* UIButton+WebCache.m in Sources */,
 				C72EA99C21A453BD00752339 /* SDLoopProgressView.m in Sources */,
 				C72EA93F21A44EBE00752339 /* JJOneScrollView.m in Sources */,

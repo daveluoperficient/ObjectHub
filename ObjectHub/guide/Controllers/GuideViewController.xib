@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,33 +12,96 @@
             <connections>
                 <outlet property="guidePageControll" destination="8h2-HQ-Pvv" id="GqM-Eu-pQI"/>
                 <outlet property="guideScrollView" destination="fda-H3-h2b" id="Hdu-Ed-mE2"/>
+                <outlet property="toLoginPageButton" destination="4Hp-Kj-L4Q" id="YsX-So-7ET"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fda-H3-h2b">
-                    <rect key="frame" x="0.0" y="0.0" width="423" height="896"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" insetsLayoutMarginsFromSafeArea="NO" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fda-H3-h2b">
+                    <rect key="frame" x="0.0" y="-45" width="414" height="941"/>
+                    <subviews>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_01" translatesAutoresizingMaskIntoConstraints="NO" id="oAj-PJ-AtK" userLabel="guide_01">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="941"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_02" translatesAutoresizingMaskIntoConstraints="NO" id="ofv-ru-Gf4" userLabel="guide_02">
+                            <rect key="frame" x="414" y="0.0" width="414" height="941"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_03" translatesAutoresizingMaskIntoConstraints="NO" id="0Ea-Ze-mBI" userLabel="guide_03">
+                            <rect key="frame" x="828" y="0.0" width="414" height="941"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_04" translatesAutoresizingMaskIntoConstraints="NO" id="VF2-jO-CDE" userLabel="guide_04">
+                            <rect key="frame" x="1242" y="0.0" width="414" height="941"/>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="oAj-PJ-AtK" firstAttribute="top" secondItem="fda-H3-h2b" secondAttribute="top" id="6BR-gR-RIG"/>
+                        <constraint firstItem="ofv-ru-Gf4" firstAttribute="width" secondItem="oAj-PJ-AtK" secondAttribute="width" id="CnZ-IC-obU"/>
+                        <constraint firstItem="VF2-jO-CDE" firstAttribute="leading" secondItem="0Ea-Ze-mBI" secondAttribute="trailing" id="GA5-Nl-doF"/>
+                        <constraint firstItem="oAj-PJ-AtK" firstAttribute="leading" secondItem="fda-H3-h2b" secondAttribute="leading" id="GlR-wT-kHC"/>
+                        <constraint firstItem="oAj-PJ-AtK" firstAttribute="centerY" secondItem="fda-H3-h2b" secondAttribute="centerY" id="I0N-3T-hM5"/>
+                        <constraint firstItem="VF2-jO-CDE" firstAttribute="centerY" secondItem="fda-H3-h2b" secondAttribute="centerY" id="I8x-ZT-MwM"/>
+                        <constraint firstItem="VF2-jO-CDE" firstAttribute="width" secondItem="0Ea-Ze-mBI" secondAttribute="width" id="J9E-bL-CSN"/>
+                        <constraint firstItem="oAj-PJ-AtK" firstAttribute="centerX" secondItem="fda-H3-h2b" secondAttribute="centerX" id="Jtg-pe-e0L"/>
+                        <constraint firstItem="ofv-ru-Gf4" firstAttribute="height" secondItem="oAj-PJ-AtK" secondAttribute="height" id="SLY-7p-ypx"/>
+                        <constraint firstAttribute="bottom" secondItem="oAj-PJ-AtK" secondAttribute="bottom" id="XDh-yp-weD"/>
+                        <constraint firstItem="VF2-jO-CDE" firstAttribute="height" secondItem="0Ea-Ze-mBI" secondAttribute="height" id="bed-g0-PHR"/>
+                        <constraint firstItem="0Ea-Ze-mBI" firstAttribute="centerY" secondItem="fda-H3-h2b" secondAttribute="centerY" id="erz-00-b1o"/>
+                        <constraint firstAttribute="trailing" secondItem="oAj-PJ-AtK" secondAttribute="trailing" id="f2y-NV-u3F"/>
+                        <constraint firstItem="ofv-ru-Gf4" firstAttribute="leading" secondItem="oAj-PJ-AtK" secondAttribute="trailing" id="ibW-Jr-3F5"/>
+                        <constraint firstItem="0Ea-Ze-mBI" firstAttribute="width" secondItem="ofv-ru-Gf4" secondAttribute="width" id="ktR-ej-VGY"/>
+                        <constraint firstItem="ofv-ru-Gf4" firstAttribute="centerY" secondItem="fda-H3-h2b" secondAttribute="centerY" id="rpM-Vg-3Id"/>
+                        <constraint firstItem="0Ea-Ze-mBI" firstAttribute="height" secondItem="ofv-ru-Gf4" secondAttribute="height" id="yOI-Q9-p4U"/>
+                        <constraint firstItem="0Ea-Ze-mBI" firstAttribute="leading" secondItem="ofv-ru-Gf4" secondAttribute="trailing" id="ySz-pK-hxC"/>
+                    </constraints>
                 </scrollView>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="8h2-HQ-Pvv">
-                    <rect key="frame" x="168" y="688" width="78" height="208"/>
+                    <rect key="frame" x="168" y="644" width="78" height="252"/>
                     <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="currentPageIndicatorTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </pageControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Hp-Kj-L4Q">
+                    <rect key="frame" x="50" y="584" width="314" height="60"/>
+                    <color key="backgroundColor" red="0.97647058819999999" green="0.36078431370000003" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="SgR-nc-1xc"/>
+                    </constraints>
+                    <state key="normal" title="开始约会">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="18"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="fda-H3-h2b" secondAttribute="trailing" id="Dfy-oI-9So"/>
                 <constraint firstAttribute="bottom" secondItem="8h2-HQ-Pvv" secondAttribute="bottom" id="MTj-Um-zgf"/>
-                <constraint firstItem="8h2-HQ-Pvv" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="168" id="a8B-vc-3Wc"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="8h2-HQ-Pvv" secondAttribute="trailing" constant="168" id="hA6-IQ-wrc"/>
-                <constraint firstItem="8h2-HQ-Pvv" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="644" id="rdG-cY-0mJ"/>
+                <constraint firstItem="8h2-HQ-Pvv" firstAttribute="top" secondItem="4Hp-Kj-L4Q" secondAttribute="bottom" id="Osf-F0-xrd"/>
+                <constraint firstAttribute="bottom" secondItem="fda-H3-h2b" secondAttribute="bottom" id="RFd-V4-ft1"/>
+                <constraint firstItem="fda-H3-h2b" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-45" id="ZUC-ti-ny6"/>
+                <constraint firstItem="fda-H3-h2b" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="ZeB-NO-nkf"/>
+                <constraint firstItem="8h2-HQ-Pvv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="168" id="a8B-vc-3Wc"/>
+                <constraint firstItem="4Hp-Kj-L4Q" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aG4-v8-W3T"/>
+                <constraint firstAttribute="trailing" secondItem="8h2-HQ-Pvv" secondAttribute="trailing" constant="168" id="hA6-IQ-wrc"/>
+                <constraint firstItem="fda-H3-h2b" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kLg-8J-oQg"/>
+                <constraint firstItem="8h2-HQ-Pvv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="644" id="rdG-cY-0mJ"/>
+                <constraint firstAttribute="trailing" secondItem="4Hp-Kj-L4Q" secondAttribute="trailing" constant="50" id="sEd-Gx-9OV"/>
+                <constraint firstItem="4Hp-Kj-L4Q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="ypl-uH-AMA"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="39.130434782608695" y="44.866071428571423"/>
         </view>
     </objects>
+    <resources>
+        <image name="guide_01" width="900" height="1600"/>
+        <image name="guide_02" width="900" height="1600"/>
+        <image name="guide_03" width="900" height="1600"/>
+        <image name="guide_04" width="900" height="1600"/>
+    </resources>
 </document>

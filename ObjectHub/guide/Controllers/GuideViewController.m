@@ -8,8 +8,7 @@
 
 #import "GuideViewController.h"
 
-#define kImageCount 3
-#define kScrollViewSize (_guideScrollView.frame.size)
+#define kImageCount 4
 #define kAfterDelayTime 0.3 //最后按钮显示的延迟时间
 
 
@@ -17,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *guideScrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *guidePageControll;
+@property (weak, nonatomic) IBOutlet UIButton *toLoginPageButton;
 
 @end
 
@@ -25,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpUI];
+    [self.toLoginPageButton setHidden:YES];
 }
 
 #pragma mark -
@@ -32,36 +33,18 @@
 - (void)setUpUI {
     //设置控制器成为scrollView代理
     _guideScrollView.delegate = self;
-    [self setupScrollView];
     [self setupPageController];
 }
 
-#pragma mark -
-#pragma mark - scrollView设置
-- (void)setupScrollView {
-//    CGSize scrollViewSize = _guideScrollView.frame.size;
-    for (int i = 0; i < kImageCount; i++) {
-        CGFloat imageViewX = i * kScrollViewSize.width;
-        UIImageView *guideImageView = [[UIImageView alloc] initWithFrame:CGRectMake(imageViewX, 0, kScrollViewSize.width , kScrollViewSize.height)];
-        //拼接图片名称
-        NSString *imageName = [NSString stringWithFormat:@"guide_%02d",i +1];
-        guideImageView.image = [UIImage imageNamed:imageName];
-        [_guideScrollView addSubview:guideImageView];
-//        if (i == 2) {
-//            UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//            button.frame = CGRectMake(0, 0, kScrollViewSize.width * 0.5, kScrollViewSize.height * 0.05);
-//            button.center = CGPointMake(kScrollViewSize.width / 2, self.guidePageControll.frame.origin.y - button.frame.size.height / 2);
-//            [button setTitle:@"进入应用" forState:UIControlStateNormal];
-//            button.titleLabel.font = [UIFont systemFontOfSize:16];
-//            button.titleLabel.textAlignment = NSTextAlignmentCenter;
-//            [button sizeToFit];
-//            [_guideScrollView addSubview:button];
-//        }
-    }
+- (void)viewDidAppear:(BOOL)animated {
+    CGSize kScrollViewSize = _guideScrollView.frame.size;
     _guideScrollView.contentSize = CGSizeMake(kImageCount * kScrollViewSize.width, 0);
     _guideScrollView.showsHorizontalScrollIndicator = NO;
-    //scrollView 分页效果
     _guideScrollView.pagingEnabled = YES;
+}
+
+-  (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 #pragma mark -
@@ -80,7 +63,8 @@
 #pragma mark -
 #pragma mark - 当scrollView停止减速时候调用
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    _guidePageControll.currentPage = scrollView.contentOffset.x / kScrollViewSize.width;
+    _guidePageControll.currentPage = scrollView.contentOffset.x / self.view.bounds.size.width;
+    [self.toLoginPageButton setHidden:_guidePageControll.currentPage == 3 ? NO : YES];
 }
 
 @end
