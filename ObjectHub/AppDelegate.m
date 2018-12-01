@@ -1,11 +1,3 @@
-//
-//  AppDelegate.m
-//  ObjectHub
-//
-//  Created by dave.luo on 10/17/18.
-//  Copyright © 2018 dave.luo. All rights reserved.
-//
-
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "LoginViewControllerProvider.h"
@@ -32,7 +24,7 @@
     navigationController.navigationBarHidden = YES;
     //LoginViewController *loginViewController = [self.loginViewControllerProvider provideControllerWithNavigationController:navigationController];
     
-    GuideViewController *guideViewController = [self.guideViewControllerProvider provideController];
+    GuideViewController *guideViewController = [self.guideViewControllerProvider provideControllerWithLoginViewControllerProvider:self.loginViewControllerProvider];
     
     [navigationController addChildViewController:guideViewController];
     
