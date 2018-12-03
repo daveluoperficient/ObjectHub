@@ -5,12 +5,15 @@
 #import "GuideViewControllerProvider.h"
 #import "Blindside.h"
 #import "InjectorProvider.h"
+#import "ApplicationSetting.h"
 
 @interface AppDelegate ()
 
 @property (nonatomic) id<BSBinder, BSInjector> injector;
 @property (nonatomic) LoginViewControllerProvider *loginViewControllerProvider;
 @property (nonatomic) GuideViewControllerProvider *guideViewControllerProvider;
+@property (nonatomic) ApplicationSetting *applicationSetting;
+@property (nonatomic) FeatureSet *featureSet;
 
 @end
 
@@ -21,19 +24,26 @@
     // Override point for customization after application launch.
     [self setupDependencies];
     UINavigationController *navigationController = [[UINavigationController alloc]init];
-    navigationController.navigationBarHidden = YES;
-    //LoginViewController *loginViewController = [self.loginViewControllerProvider provideControllerWithNavigationController:navigationController];
+    if (self.featureSet.isFirstRunApplicationFlag) {
+        navigationController.navigationBarHidden = YES;
+        //LoginViewController *loginViewController = [self.loginViewControllerProvider provideControllerWithNavigationController:navigationController];
     
-    GuideViewController *guideViewController = [self.guideViewControllerProvider provideControllerWithLoginViewControllerProvider:self.loginViewControllerProvider];
+        GuideViewController *guideViewController = [self.guideViewControllerProvider provideControllerWithLoginViewControllerProvider:self.loginViewControllerProvider];
     
-    [navigationController addChildViewController:guideViewController];
-    
+        [navigationController addChildViewController:guideViewController];
+    } else {
+        LoginViewController *loginViewController = [self.loginViewControllerProvider provideControllerWithNavigationController:navigationController];
+        [navigationController setNavigationBarHidden:YES];
+        [navigationController addChildViewController:loginViewController];
+    }
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
     [self.window setRootViewController:navigationController];
     [self.window makeKeyAndVisible];
     
+    self.applicationSetting.featureSet.isFirstRunApplicationFlag = NO;
+    [self.applicationSetting archive];
     return YES;
 }
 
@@ -41,6 +51,17 @@
     self.injector = (id)[InjectorProvider injector];
     self.loginViewControllerProvider = [self.injector getInstance:[LoginViewControllerProvider class]];
     self.guideViewControllerProvider = [self.injector getInstance:[GuideViewControllerProvider class]];
+    self.applicationSetting = [self.injector getInstance:[ApplicationSetting class]];
+    [self.applicationSetting unarchive];
+    if (self.applicationSetting.featureSet == nil) {
+        FeatureSet *featureSet = [[FeatureSet alloc] init];
+        featureSet.isFirstRunApplicationFlag = YES;
+        self.featureSet = featureSet;
+        [self.applicationSetting setFeatureSet:featureSet];
+    } else {
+        self.featureSet = self.applicationSetting.featureSet;
+    }
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
