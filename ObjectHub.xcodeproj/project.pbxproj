@@ -44,6 +44,8 @@
 		C738ED1B21782CDD005F142D /* LoginViewControllerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C738ED1A21782CDD005F142D /* LoginViewControllerProvider.m */; };
 		C738ED1F21784C41005F142D /* InjectorProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C738ED1E21784C41005F142D /* InjectorProvider.m */; };
 		C738ED2221784D4C005F142D /* BlindsideModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C738ED2121784D4C005F142D /* BlindsideModule.m */; };
+		C73A604221B28E9D00372EE9 /* FeatureSet.m in Sources */ = {isa = PBXBuildFile; fileRef = C73A604121B28E9D00372EE9 /* FeatureSet.m */; };
+		C73A604521B293A400372EE9 /* ApplicationSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = C73A604421B293A400372EE9 /* ApplicationSetting.m */; };
 		C76AF5FD218A98AD004FB434 /* OHTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C76AF5FC218A98AD004FB434 /* OHTabBarViewController.m */; };
 		C76AF602218A9F8E004FB434 /* OHTabBarViewControllerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C76AF601218A9F8E004FB434 /* OHTabBarViewControllerProvider.m */; };
 		C777324421AE7E6F00CC90CB /* GuideViewControllerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C777323E21AE7E6F00CC90CB /* GuideViewControllerProvider.m */; };
@@ -156,6 +158,10 @@
 		C738ED1E21784C41005F142D /* InjectorProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InjectorProvider.m; sourceTree = "<group>"; };
 		C738ED2021784D2C005F142D /* BlindsideModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlindsideModule.h; sourceTree = "<group>"; };
 		C738ED2121784D4C005F142D /* BlindsideModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlindsideModule.m; sourceTree = "<group>"; };
+		C73A604021B28E8D00372EE9 /* FeatureSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeatureSet.h; sourceTree = "<group>"; };
+		C73A604121B28E9D00372EE9 /* FeatureSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeatureSet.m; sourceTree = "<group>"; };
+		C73A604321B2934E00372EE9 /* ApplicationSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationSetting.h; sourceTree = "<group>"; };
+		C73A604421B293A400372EE9 /* ApplicationSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationSetting.m; sourceTree = "<group>"; };
 		C76AF5FB218A9897004FB434 /* OHTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHTabBarViewController.h; sourceTree = "<group>"; };
 		C76AF5FC218A98AD004FB434 /* OHTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHTabBarViewController.m; sourceTree = "<group>"; };
 		C76AF601218A9F8E004FB434 /* OHTabBarViewControllerProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OHTabBarViewControllerProvider.m; sourceTree = "<group>"; };
@@ -408,6 +414,10 @@
 				C738ED1E21784C41005F142D /* InjectorProvider.m */,
 				C738ED2021784D2C005F142D /* BlindsideModule.h */,
 				C738ED2121784D4C005F142D /* BlindsideModule.m */,
+				C73A604021B28E8D00372EE9 /* FeatureSet.h */,
+				C73A604121B28E9D00372EE9 /* FeatureSet.m */,
+				C73A604321B2934E00372EE9 /* ApplicationSetting.h */,
+				C73A604421B293A400372EE9 /* ApplicationSetting.m */,
 			);
 			path = module;
 			sourceTree = "<group>";
@@ -744,6 +754,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C738ED2221784D4C005F142D /* BlindsideModule.m in Sources */,
+				C73A604521B293A400372EE9 /* ApplicationSetting.m in Sources */,
 				C76AF602218A9F8E004FB434 /* OHTabBarViewControllerProvider.m in Sources */,
 				C72EA98E21A4533200752339 /* UIImageView+WebCache.m in Sources */,
 				C72EA98621A4533200752339 /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -758,6 +769,7 @@
 				C72EA92E21A44E2600752339 /* HWCollectionViewCell.m in Sources */,
 				C72EA94221A44EBE00752339 /* JJPhotoManeger.m in Sources */,
 				C72EA98C21A4533200752339 /* SDWebImageDecoder.m in Sources */,
+				C73A604221B28E9D00372EE9 /* FeatureSet.m in Sources */,
 				C72EA98821A4533200752339 /* SDWebImageCompat.m in Sources */,
 				C76AF5FD218A98AD004FB434 /* OHTabBarViewController.m in Sources */,
 				C72EA98F21A4533200752339 /* UIImage+GIF.m in Sources */,
