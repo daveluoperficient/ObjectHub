@@ -13,6 +13,7 @@
 		C72BA6E0218D86A00023F926 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C72BA6DF218D86A00023F926 /* HomePageViewController.m */; };
 		C72BA6E2218D871F0023F926 /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72BA6E1218D871F0023F926 /* HomePageViewController.xib */; };
 		C72BA6E5218D87EF0023F926 /* HomePageViewControllerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C72BA6E4218D87EF0023F926 /* HomePageViewControllerProvider.m */; };
+		C72BAA7B21C0F0DA004B24A2 /* AFNHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C72BAA7921C0F0D9004B24A2 /* AFNHttpRequest.m */; };
 		C72EA92E21A44E2600752339 /* HWCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA92B21A44E2500752339 /* HWCollectionViewCell.m */; };
 		C72EA92F21A44E2600752339 /* HWCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72EA92C21A44E2600752339 /* HWCollectionViewCell.xib */; };
 		C72EA93E21A44EBE00752339 /* JJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA93221A44EBD00752339 /* JJPhoto.m */; };
@@ -96,6 +97,8 @@
 		C72BA6E1218D871F0023F926 /* HomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageViewController.xib; sourceTree = "<group>"; };
 		C72BA6E3218D87DB0023F926 /* HomePageViewControllerProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageViewControllerProvider.h; sourceTree = "<group>"; };
 		C72BA6E4218D87EF0023F926 /* HomePageViewControllerProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageViewControllerProvider.m; sourceTree = "<group>"; };
+		C72BAA7921C0F0D9004B24A2 /* AFNHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNHttpRequest.m; sourceTree = "<group>"; };
+		C72BAA7A21C0F0D9004B24A2 /* AFNHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNHttpRequest.h; sourceTree = "<group>"; };
 		C72EA92B21A44E2500752339 /* HWCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWCollectionViewCell.m; sourceTree = "<group>"; };
 		C72EA92C21A44E2600752339 /* HWCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWCollectionViewCell.xib; sourceTree = "<group>"; };
 		C72EA92D21A44E2600752339 /* HWCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWCollectionViewCell.h; sourceTree = "<group>"; };
@@ -261,6 +264,15 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		C72BAA7821C0F0D9004B24A2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C72BAA7921C0F0D9004B24A2 /* AFNHttpRequest.m */,
+				C72BAA7A21C0F0D9004B24A2 /* AFNHttpRequest.h */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		C72EA93021A44E4B00752339 /* HWImagePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,6 +422,7 @@
 		C738ED1C21784C0A005F142D /* module */ = {
 			isa = PBXGroup;
 			children = (
+				C72BAA7821C0F0D9004B24A2 /* Services */,
 				C738ED1D21784C34005F142D /* InjectorProvider.h */,
 				C738ED1E21784C41005F142D /* InjectorProvider.m */,
 				C738ED2021784D2C005F142D /* BlindsideModule.h */,
@@ -760,6 +773,7 @@
 				C72EA98621A4533200752339 /* UIImageView+HighlightedWebCache.m in Sources */,
 				C72EA93E21A44EBE00752339 /* JJPhoto.m in Sources */,
 				C72EA98B21A4533200752339 /* SDWebImageDownloaderOperation.m in Sources */,
+				C72BAA7B21C0F0DA004B24A2 /* AFNHttpRequest.m in Sources */,
 				C72EA98721A4533200752339 /* UIView+WebCacheOperation.m in Sources */,
 				C72EA99B21A453BD00752339 /* SDImageCache.m in Sources */,
 				C777324421AE7E6F00CC90CB /* GuideViewControllerProvider.m in Sources */,
