@@ -14,6 +14,7 @@
 		C72BA6E2218D871F0023F926 /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72BA6E1218D871F0023F926 /* HomePageViewController.xib */; };
 		C72BA6E5218D87EF0023F926 /* HomePageViewControllerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C72BA6E4218D87EF0023F926 /* HomePageViewControllerProvider.m */; };
 		C72BAA7B21C0F0DA004B24A2 /* AFNHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C72BAA7921C0F0D9004B24A2 /* AFNHttpRequest.m */; };
+		C72BAA7E21C0F506004B24A2 /* TestSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72BAA7D21C0F506004B24A2 /* TestSwift.swift */; };
 		C72EA92E21A44E2600752339 /* HWCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA92B21A44E2500752339 /* HWCollectionViewCell.m */; };
 		C72EA92F21A44E2600752339 /* HWCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72EA92C21A44E2600752339 /* HWCollectionViewCell.xib */; };
 		C72EA93E21A44EBE00752339 /* JJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = C72EA93221A44EBD00752339 /* JJPhoto.m */; };
@@ -99,6 +100,8 @@
 		C72BA6E4218D87EF0023F926 /* HomePageViewControllerProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageViewControllerProvider.m; sourceTree = "<group>"; };
 		C72BAA7921C0F0D9004B24A2 /* AFNHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNHttpRequest.m; sourceTree = "<group>"; };
 		C72BAA7A21C0F0D9004B24A2 /* AFNHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNHttpRequest.h; sourceTree = "<group>"; };
+		C72BAA7C21C0F506004B24A2 /* ObjectHub-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjectHub-Bridging-Header.h"; sourceTree = "<group>"; };
+		C72BAA7D21C0F506004B24A2 /* TestSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSwift.swift; sourceTree = "<group>"; };
 		C72EA92B21A44E2500752339 /* HWCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWCollectionViewCell.m; sourceTree = "<group>"; };
 		C72EA92C21A44E2600752339 /* HWCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HWCollectionViewCell.xib; sourceTree = "<group>"; };
 		C72EA92D21A44E2600752339 /* HWCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWCollectionViewCell.h; sourceTree = "<group>"; };
@@ -269,6 +272,8 @@
 			children = (
 				C72BAA7921C0F0D9004B24A2 /* AFNHttpRequest.m */,
 				C72BAA7A21C0F0D9004B24A2 /* AFNHttpRequest.h */,
+				C72BAA7D21C0F506004B24A2 /* TestSwift.swift */,
+				C72BAA7C21C0F506004B24A2 /* ObjectHub-Bridging-Header.h */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -622,6 +627,7 @@
 				TargetAttributes = {
 					C7C35FFE217716C7005D2610 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1010;
 					};
 					C7C36019217716C9005D2610 = {
 						CreatedOnToolsVersion = 10.0;
@@ -779,6 +785,7 @@
 				C777324421AE7E6F00CC90CB /* GuideViewControllerProvider.m in Sources */,
 				C72BA6E0218D86A00023F926 /* HomePageViewController.m in Sources */,
 				C7903CAD2197FFD200F045D6 /* PublishInteractionViewControllerProvider.m in Sources */,
+				C72BAA7E21C0F506004B24A2 /* TestSwift.swift in Sources */,
 				C738ED1B21782CDD005F142D /* LoginViewControllerProvider.m in Sources */,
 				C72EA92E21A44E2600752339 /* HWCollectionViewCell.m in Sources */,
 				C72EA94221A44EBE00752339 /* JJPhotoManeger.m in Sources */,
@@ -971,7 +978,10 @@
 			baseConfigurationReference = 9899B546AA02919272768711 /* Pods-ObjectHub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -986,6 +996,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.perficient.ObjectHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjectHub/module/Services/ObjectHub-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -995,7 +1008,10 @@
 			baseConfigurationReference = DA3581A37280BA2E124B6604 /* Pods-ObjectHub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -1010,6 +1026,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.perficient.ObjectHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjectHub/module/Services/ObjectHub-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1018,6 +1036,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2118C6B5478866C65BAD511C /* Pods-ObjectHubTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ObjectHubTests/Info.plist;
@@ -1037,6 +1056,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 839E2A7E3D3D5879C567E330 /* Pods-ObjectHubTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ObjectHubTests/Info.plist;
@@ -1056,6 +1076,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0ACE5F4D31A5BA5156818323 /* Pods-ObjectHubUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ObjectHubUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1074,6 +1095,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 984E57D6DD2DE78A96753D54 /* Pods-ObjectHubUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ObjectHubUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
