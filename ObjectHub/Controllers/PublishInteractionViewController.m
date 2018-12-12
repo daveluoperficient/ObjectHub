@@ -5,9 +5,10 @@
 #import "HWImagePickerSheet.h"
 #import "TZImagePickerController.h"
 #import <Photos/Photos.h>
+#import "AFNHttpRequest.h"
 
 
-@interface PublishInteractionViewController () <UICollectionViewDelegate,UICollectionViewDataSource,PublishInteractionDelegate,TZImagePickerControllerDelegate,JJPhotoDelegate,UITextViewDelegate>
+@interface PublishInteractionViewController () <UICollectionViewDelegate,UICollectionViewDataSource,PublishInteractionDelegate,TZImagePickerControllerDelegate,JJPhotoDelegate,UITextViewDelegate,RequestDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *contentView;
 @property (weak, nonatomic) IBOutlet UITextView *interactionTextView;
@@ -254,6 +255,34 @@
     [alertController addAction:actionAlbum];
     _viewController = controller;
     [_viewController presentViewController:alertController animated:YES completion:nil];
-    
 }
+
+- (IBAction)submitButton:(id)sender {
+    NSString *message = self.interactionTextView.text;
+    AFNHttpRequest *request = [[AFNHttpRequest alloc] initWithDelegate:self];
+    [request setRequestUrl:@"http://10.2.20.56:2018/upload"];
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+    [dictionary setObject:message forKey:@"message"];
+    [request setRequestParams:dictionary];
+    [request requestMultipartMediaFormData:_imageArray];
+}
+
+- (void)requestFinishedSuccessed:(NSDictionary *)dictionary {
+    NSEnumerator *enumeraor = [dictionary keyEnumerator];
+    NSString *key = [enumeraor nextObject];
+    while (key) {
+        NSLog(@"%@", [dictionary objectForKey:key]);
+        key = [enumeraor nextObject];
+    }
+}
+
+- (void)requestFinishedFailed:(NSDictionary *)dictionary {
+    NSEnumerator *enumeraor = [dictionary keyEnumerator];
+    NSString *key = [enumeraor nextObject];
+    while (key) {
+        NSLog(@"%@", [dictionary objectForKey:key]);
+        key = [enumeraor nextObject];
+    }
+}
+
 @end

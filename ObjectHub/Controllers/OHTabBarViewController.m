@@ -95,7 +95,7 @@
                 [self setBarItemOffsets:30 andImageOffset:-20];
                 break;
             case 1125:
-                [self setBarItemOffsets:30 andImageOffset:-20];
+                [self setBarItemOffsets:10 andImageOffset:-20];
                 break;
             default:
                 break;
