@@ -9,6 +9,7 @@ target 'ObjectHub' do
   pod 'AFNetworking'
   pod 'TZImagePickerController'
   pod 'Blindside','1.3.1'
+  pod 'Toast','~> 3.0'
 
   target 'ObjectHubTests' do
     inherit! :search_paths

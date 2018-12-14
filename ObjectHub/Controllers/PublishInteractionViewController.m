@@ -6,6 +6,7 @@
 #import "TZImagePickerController.h"
 #import <Photos/Photos.h>
 #import "AFNHttpRequest.h"
+#import "UIView+Toast.h"
 
 
 @interface PublishInteractionViewController () <UICollectionViewDelegate,UICollectionViewDataSource,PublishInteractionDelegate,TZImagePickerControllerDelegate,JJPhotoDelegate,UITextViewDelegate,RequestDelegate>
@@ -260,9 +261,11 @@
 - (IBAction)submitButton:(id)sender {
     NSString *message = self.interactionTextView.text;
     AFNHttpRequest *request = [[AFNHttpRequest alloc] initWithDelegate:self];
-    [request setRequestUrl:@"http://10.2.20.56:2018/upload"];
+    [request setRequestUrl:@"http://127.0.0.1:2018/upload/interaction"];
     NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
-    [dictionary setObject:message forKey:@"message"];
+    [dictionary setObject:message forKey:@"content"];
+    [dictionary setObject:@1001 forKey:@"userId"];
+    [dictionary setObject:@"hot" forKey:@"topic"];
     [request setRequestParams:dictionary];
     [request requestMultipartMediaFormData:_imageArray];
 }
@@ -274,6 +277,10 @@
         NSLog(@"%@", [dictionary objectForKey:key]);
         key = [enumeraor nextObject];
     }
+    
+    [self.contentView makeToast:@"动态发布成功"
+                duration:3.0
+                position:CSToastPositionBottom];
 }
 
 - (void)requestFinishedFailed:(NSDictionary *)dictionary {

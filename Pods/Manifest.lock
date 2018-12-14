@@ -15,24 +15,28 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - Blindside (1.3.1)
+  - Toast (3.1.0)
   - TZImagePickerController (3.1.2)
 
 DEPENDENCIES:
   - AFNetworking
   - Blindside (= 1.3.1)
+  - Toast (~> 3.0)
   - TZImagePickerController
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - Blindside
+    - Toast
     - TZImagePickerController
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Blindside: 5e32e80fa301ddff70c3f5735cb44467cf3195ff
+  Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
   TZImagePickerController: 29b279caee3309cbaa04ef1384b036ec90297f3f
 
-PODFILE CHECKSUM: 6c5ecbd5493a4b8529a6ab7c9d9f8135a0db06a2
+PODFILE CHECKSUM: 3dff678de55d9da25e1ac67df9a80758b8e40cc0
 
 COCOAPODS: 1.5.3
