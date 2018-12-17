@@ -1,9 +1,10 @@
 #import <Foundation/Foundation.h>
 
 @class PublishInteractionViewController;
+@protocol OHTabBarDelegate;
 
 @interface PublishInteractionViewControllerProvider : NSObject
 
-- (PublishInteractionViewController *)provideController;
+- (PublishInteractionViewController *)provideControllerWithTabBarDelegate:(id<OHTabBarDelegate>) tabBarDelegate;
 
 @end

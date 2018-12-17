@@ -4,8 +4,9 @@
 #import "PublishInteractionViewController.h"
 #import "PublishInteractionViewControllerProvider.h"
 #import "Blindside.h"
+#import "UIView+Toast.h"
 
-@interface OHTabBarViewController () <UITabBarDelegate>
+@interface OHTabBarViewController () <UITabBarDelegate, OHTabBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 @property (weak, nonatomic) IBOutlet UITabBarItem *tabHome;
@@ -55,7 +56,7 @@
     HomePageViewController *homePageviewController = [self.homePageViewControllerProvider provideController];
     UINavigationController *homePage = [[UINavigationController alloc]initWithRootViewController:homePageviewController];
     UIViewController *collectPageviewController = [[UIViewController alloc] init];
-    PublishInteractionViewController *publishPageviewController = [self.publishInteractionViewControllerProvider provideController];
+    PublishInteractionViewController *publishPageviewController = [self.publishInteractionViewControllerProvider provideControllerWithTabBarDelegate:self];
     UINavigationController *publishPage = [[UINavigationController alloc]initWithRootViewController:publishPageviewController];
     UIViewController *newsPageviewController = [[UIViewController alloc] init];
     UIViewController *minePageviewController = [[UIViewController alloc] init];
@@ -127,6 +128,35 @@
     UIViewController *vc = [self.subViews objectAtIndex:item.tag];
     vc.view.frame = self.tabView.bounds;
     [self.tabView addSubview:vc.view];
+}
+
+- (void)didSelectBarItem:(NSInteger)tag andToastMessage:(NSString *)message andDuration:(NSTimeInterval)duration {
+    for (UIView *subviews in [self.tabView subviews]) {
+        [subviews removeFromSuperview];
+    }
+    UIViewController *vc = [self.subViews objectAtIndex:tag];
+    vc.view.frame = self.tabView.bounds;
+    [self.tabView addSubview:vc.view];
+    switch (tag) {
+        case 0:
+            [_tabBar setSelectedItem:_tabHome];
+            break;
+        case 1:
+            [_tabBar setSelectedItem:_tabCollect];
+            break;
+        case 2:
+            [_tabBar setSelectedItem:_tabPublish];
+            break;
+        case 3:
+            [_tabBar setSelectedItem:_tabNews];
+            break;
+        case 4:
+            [_tabBar setSelectedItem:_tabMime];
+            break;
+        default:
+            break;
+    }
+    [self.tabView makeToast:message duration:duration position:CSToastPositionBottom];
 }
 
 @end

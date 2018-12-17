@@ -1,5 +1,6 @@
 #import "PublishInteractionViewControllerProvider.h"
 #import "PublishInteractionViewController.h"
+#import "OHTabBarViewController.h"
 #import "Blindside.h"
 
 @interface PublishInteractionViewControllerProvider ()
@@ -10,8 +11,8 @@
 
 @implementation PublishInteractionViewControllerProvider
 
-- (PublishInteractionViewController *)provideController {
-    return [self.injector getInstance:[PublishInteractionViewController class]];
+- (PublishInteractionViewController *)provideControllerWithTabBarDelegate:(id<OHTabBarDelegate>) tabBarDelegate {
+    return [self.injector getInstance:[PublishInteractionViewController class] withArgs:tabBarDelegate, nil];
 }
 
 @end

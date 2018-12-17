@@ -7,6 +7,8 @@
 #import <Photos/Photos.h>
 #import "AFNHttpRequest.h"
 #import "UIView+Toast.h"
+#import "Blindside.h"
+#import "OHTabBarViewController.h"
 
 
 @interface PublishInteractionViewController () <UICollectionViewDelegate,UICollectionViewDataSource,PublishInteractionDelegate,TZImagePickerControllerDelegate,JJPhotoDelegate,UITextViewDelegate,RequestDelegate>
@@ -24,6 +26,7 @@
 @property (nonatomic, strong) NSString *inputHint;
 
 @property (nonatomic) UIImagePickerController *imaPic;
+@property (nonatomic) id<OHTabBarDelegate> delegate;
 
 @end
 
@@ -31,6 +34,21 @@
 
 #define MAX_PICK_NUM 9
 #define CELL_INDENTIFIER "MyCollectionViewCell"
+
++ (BSInitializer *)bsInitializer {
+    return [BSInitializer initializerWithClass:self
+                                      selector:@selector(initViewControllerWithTabBarDelegate:)
+                                  argumentKeys:BS_DYNAMIC, nil
+            ];
+}
+
+- (instancetype)initViewControllerWithTabBarDelegate:(id<OHTabBarDelegate>) delegate{
+    self = [super init];
+    if (self) {
+        _delegate = delegate;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -259,6 +277,8 @@
 }
 
 - (IBAction)submitButton:(id)sender {
+    [CSToastManager setQueueEnabled:YES];
+    [self.contentView makeToastActivity:CSToastPositionCenter];
     NSString *message = self.interactionTextView.text;
     AFNHttpRequest *request = [[AFNHttpRequest alloc] initWithDelegate:self];
     [request setRequestUrl:@"http://127.0.0.1:2018/upload/interaction"];
@@ -271,16 +291,19 @@
 }
 
 - (void)requestFinishedSuccessed:(NSDictionary *)dictionary {
+    [self.contentView hideToastActivity];
     NSEnumerator *enumeraor = [dictionary keyEnumerator];
     NSString *key = [enumeraor nextObject];
     while (key) {
         NSLog(@"%@", [dictionary objectForKey:key]);
         key = [enumeraor nextObject];
     }
-    
-    [self.contentView makeToast:@"动态发布成功"
-                duration:3.0
-                position:CSToastPositionBottom];
+    [self.interactionTextView setText:@""];
+    [self.imageArray removeAllObjects];
+    [self.contentView reloadData];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectBarItem:andToastMessage:andDuration:)]) {
+        [self.delegate didSelectBarItem:0 andToastMessage:@"动态发布成功" andDuration:2.0];
+    }
 }
 
 - (void)requestFinishedFailed:(NSDictionary *)dictionary {
